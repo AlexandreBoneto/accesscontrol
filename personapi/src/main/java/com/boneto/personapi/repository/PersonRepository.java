@@ -1,4 +1,4 @@
-package com.boneto.personapi.repositories;
+package com.boneto.personapi.repository;
 
 
 import com.boneto.personapi.entities.Person;

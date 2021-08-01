@@ -5,7 +5,7 @@ import com.boneto.personapi.dto.request.PersonDTO;
 import com.boneto.personapi.dto.response.MessageResponseDTO;
 import com.boneto.personapi.entities.Person;
 import com.boneto.personapi.exception.PersonNotFoundException;
-import com.boneto.personapi.repositories.PersonRepository;
+import com.boneto.personapi.repository.PersonRepository;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.AllArgsConstructor;
@@ -18,7 +18,7 @@ public class PersonService {
 
     private final PersonRepository personRepository;
 
-    private final PersonMapper personMapper;
+    private final PersonMapper personMapper = PersonMapper.INSTANCE;
 
     public MessageResponseDTO create(PersonDTO personDTO) {
         Person person = personMapper.toModel(personDTO);
